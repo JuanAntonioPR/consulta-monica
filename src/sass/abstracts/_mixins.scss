@@ -1,0 +1,65 @@
+@use "variables" as v;
+
+@mixin breakpoint($bp) {
+  @if $bp == tablet {
+    @media (min-width: v.$bp-tablet) {
+      @content;
+    }
+  }
+
+  @if $bp == tablethorizontal {
+    @media (min-width: v.$bp-tablet-horizontal) {
+      @content;
+    }
+  }
+
+  @if $bp == desktop {
+    @media (min-width: v.$bp-desktop) {
+      @content;
+    }
+  }
+
+  @if $bp == desktopxl {
+    @media (min-width: v.$bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+// Ejemplo de mixin de botón para tener un punto de partida
+// @mixin button {
+//   position: relative;
+//   display: inline-block;
+//   font-family: v.$fuente;
+//   font-size: 1rem;
+//   font-weight: 600;
+//   letter-spacing: 2px;
+//   color: v.$color-azul-oscuro;
+//   text-decoration: none;
+//   background-color: transparent;
+//   width: max-content;
+//   padding: 10px 0px;
+//   border: none;
+//   transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     height: 2px;
+//     width: 100%;
+//     background-color: v.$color-azul-oscuro;
+//     transform: scaleX(0);
+//     transform-origin: center;
+//     transition: transform 0.3s ease-in-out;
+//   }
+
+//   &:hover {
+//     transform: scale(1.10);
+    
+//     &::after {
+//       transform: scaleX(1);
+//     }
+//   }
+// }
