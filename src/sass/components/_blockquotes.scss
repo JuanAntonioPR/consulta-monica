@@ -1,0 +1,25 @@
+@use "../abstracts/abstracts" as ab;
+
+blockquote {
+  border-left: 4px solid ab.$color-primary;
+  padding-left: 2rem;
+  padding-right: 0.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: ab.$color-muted;
+  background-color: rgba(ab.$color-primary, 0.05);
+  border-radius: 0.8rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  position: relative;
+
+  &::before {
+    content: "“";
+    font-size: 4.5rem;
+    color: rgba(ab.$color-primary, 0.7);
+    position: absolute;
+    left: -0.2rem;
+    top: -1rem;
+    line-height: 1;
+  }
+}

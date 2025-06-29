@@ -5,15 +5,36 @@ $bp-desktop: 1200px;           // Escritorio normal
 $bp-desktop-xl: 1440px;        // Pantallas grandes
 
 // Colores
-// $color-blanco: #FFFFFF;
-// $color-negro: #010713;
+$color-primary: #035278;
+$color-secondary: #0D87BB;
+$color-accent: #FF8A00; // Puedes elegir uno para botones o CTA
+$color-text: #1E1E1E; // Color principal de texto
+$color-muted: #666;    // Textos secundarios
+$color-background: #fff; // Fondo general
+$color-surface: #f5f5f5; // Fondo de cajas, tarjetas
 
+$color-success: #28a745; // Color para estados de éxito (fondo o texto)
+$color-warning: #ffc107; // Color para estados de advertencia/peligro
+$color-error: #dc3545;   // Color para estados de error
 
-// Fuentes
-// $fuente: "Poppins", sans-serif;
-// $headingXL: 44px;
-// $headingL: 36px;
-// $headingM: 24px;
-// $bodyL: 20px;
-// $bodyM: 16px;
-// $bodyS: 14px;
+// Tipografías
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Lora', serif;
+
+// Tamaño fuentes
+$font-heading-xl: 2.75rem; // ~44px
+$font-heading-l:  2.25rem; // ~36px
+$font-heading-m:  1.5rem;  // ~24px
+$font-body-l:     1.25rem; // ~20px
+$font-body-m:     1rem;    // ~16px
+$font-body-s:     0.875rem;// ~14px
+
+// Espaciado
+$space-xxs: 0.125rem;  // 2px
+$space-xs:  0.25rem;   // 4px
+$space-sm:  0.5rem;    // 8px
+$space-md:  1rem;      // 16px
+$space-lg:  2rem;      // 32px
+$space-xl:  4rem;      // 64px
+$space-xxl: 6rem;      // 96px
+

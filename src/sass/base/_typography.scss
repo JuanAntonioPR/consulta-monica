@@ -1,5 +1,25 @@
 @use "../abstracts/abstracts" as ab;
 
+body {
+  font-family: ab.$font-primary;
+  font-size: ab.$font-body-m;
+  line-height: 1.6;
+  color: ab.$color-text;
+}
+
 h1 {
-    color: red;
+  font-size: ab.$font-heading-xl;
+}
+
+h2 {
+  font-size: ab.$font-heading-l;
+}
+
+h3 {
+  font-size: ab.$font-heading-m;
+}
+
+p {
+  font-size: ab.$font-body-m;
+  line-height: 1.6;
 }
