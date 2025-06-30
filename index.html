@@ -5,29 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dra. Mónica Moreno</title>
     <link rel="icon" href="./img/Favicon_azul-degradado.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <img src="./img/Logo_principal_azul.png" alt="logo página" width="180px">
+    <header class="site-header">
+      <nav class="main-nav">
+        <a href="#inicio" class="logo">
+          <img src="./img/logo_principal_azul.png" alt="Logo Dra. Moreno" width="160" />
+        </a>
+
+        <a href="#contacto" class="btn-cita btn-cita-header">Pedir cita</a>
+
+        <!-- Hamburguesa -->
+        <button class="ham-menu" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Menú lateral oculto -->
+        <div class="off-screen-menu">
+          <ul class="nav-list">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#preguntas-frecuentes">FAQ</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+
+          <!-- Botón que aparece en el menú lateral -->
+          <a href="#contacto" class="btn-cita btn-cita-menu">Pedir cita</a>
+        </div>
+      </nav>
     </header>
 
     <main>
       <div class="container">
-        <section class="hero">
+        <section id="inicio" class="hero">
           <h1>Atención médica cercana, cuando y donde la necesites</h1>
           <p>Consulta online cómoda, segura y personalizada.</p>
           <button>Reserva tu cita</button>
-        </section>
-
-        <section id="inicio">
           <!-- Imagen destacada, texto de bienvenida -->
         </section>
-
+        
         <section id="servicios">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, ad. Autem delectus vitae consequatur optio saepe distinctio! Doloremque quibusdam atque eaque nesciunt est nisi incidunt. Impedit possimus ut doloremque obcaecati!</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, ad. Autem delectus vitae consequatur optio saepe distinctio! Doloremque quibusdam atque eaque nesciunt est nisi incidunt. Impedit possimus ut doloremque obcaecati!</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, ad. Autem delectus vitae consequatur optio saepe distinctio! Doloremque quibusdam atque eaque nesciunt est nisi incidunt. Impedit possimus ut doloremque obcaecati!</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, ad. Autem delectus vitae consequatur optio saepe distinctio! Doloremque quibusdam atque eaque nesciunt est nisi incidunt. Impedit possimus ut doloremque obcaecati!</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, ad. Autem delectus vitae consequatur optio saepe distinctio! Doloremque quibusdam atque eaque nesciunt est nisi incidunt. Impedit possimus ut doloremque obcaecati!</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, ad. Autem delectus vitae consequatur optio saepe distinctio! Doloremque quibusdam atque eaque nesciunt est nisi incidunt. Impedit possimus ut doloremque obcaecati!</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, ad. Autem delectus vitae consequatur optio saepe distinctio! Doloremque quibusdam atque eaque nesciunt est nisi incidunt. Impedit possimus ut doloremque obcaecati!</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, ad. Autem delectus vitae consequatur optio saepe distinctio! Doloremque quibusdam atque eaque nesciunt est nisi incidunt. Impedit possimus ut doloremque obcaecati!</p>
           <!-- Listado de servicios o especialidades -->
         </section>
 
-        <section id="sobre-mi" class="sobre-mi">
+        <section id="sobre-mi" class="sobre-mi" data-aos="fade-up">
           <h2>Sobre mí</h2>
 
           <p>

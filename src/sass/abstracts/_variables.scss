@@ -7,7 +7,8 @@ $bp-desktop-xl: 1440px;        // Pantallas grandes
 // Colores
 $color-primary: #035278;
 $color-secondary: #0D87BB;
-$color-accent: #FF8A00; // Puedes elegir uno para botones o CTA
+$color-accent-1: #FF8A00; // Puedes elegir uno para botones o CTA
+$color-accent-2: #ffd166;
 $color-text: #1E1E1E; // Color principal de texto
 $color-muted: #666;    // Textos secundarios
 $color-background: #fff; // Fondo general
@@ -37,4 +38,5 @@ $space-md:  1rem;      // 16px
 $space-lg:  2rem;      // 32px
 $space-xl:  4rem;      // 64px
 $space-xxl: 6rem;      // 96px
+
 

@@ -1,1 +1,132 @@
 @use "../abstracts/abstracts" as ab;
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100; // asegúrate de que esté por encima del .off-screen-menu
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-nav {
+    position: relative;
+    background-color: ab.$color-primary;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo.invisible {
+        visibility: hidden;
+    }
+
+    .btn-cita {
+        background-color: ab.$color-accent-1;
+        color: white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 0.5rem;
+        font-weight: bold;
+        font-size: 0.9rem;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .ham-menu {
+        height: 30px;
+        width: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: none;
+        border: none;
+        position: relative;
+        z-index: 1001;
+
+        span {
+            height: 4px;
+            background-color: white;
+            border-radius: 2px;
+            transition: 0.3s ease;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        span:nth-child(1) {
+            top: 25%;
+        }
+        span:nth-child(3) {
+            top: 75%;
+        }
+
+        &.active {
+            span:nth-child(1) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+            }
+
+            span:nth-child(3) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+
+    .off-screen-menu {
+        background: linear-gradient(135deg, ab.$color-primary, ab.$color-secondary);
+        height: 100vh;
+        width: 100vw;
+        max-width: 100%;
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        z-index: 1000;
+
+        &.active {
+            right: 0;
+            opacity: 1;
+
+            .nav-list li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-list {
+            text-align: center;
+            font-size: 1.5rem;
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-bottom: 1.5rem;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+    
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+
+        .btn-cita-menu {
+            margin: 1.5rem 0;
+        }
+    }
+}
