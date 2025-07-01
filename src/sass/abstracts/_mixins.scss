@@ -1,5 +1,7 @@
+@use "sass:color";
 @use "variables" as v;
 
+// Breakpoints
 @mixin breakpoint($bp) {
   @if $bp == tablet {
     @media (min-width: v.$bp-tablet) {
@@ -26,40 +28,38 @@
   }
 }
 
-// Ejemplo de mixin de botón para tener un punto de partida
-// @mixin button {
-//   position: relative;
-//   display: inline-block;
-//   font-family: v.$fuente;
-//   font-size: 1rem;
-//   font-weight: 600;
-//   letter-spacing: 2px;
-//   color: v.$color-azul-oscuro;
-//   text-decoration: none;
-//   background-color: transparent;
-//   width: max-content;
-//   padding: 10px 0px;
-//   border: none;
-//   transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+// Botones
+@mixin button($bg-color, $color, $scale-hover: 1.05, $transition-duration: 0.3s) {
+  display: inline-block;
+  background-color: $bg-color;
+  color: $color;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform $transition-duration ease, background-color $transition-duration ease;
 
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     left: 0;
-//     bottom: 0;
-//     height: 2px;
-//     width: 100%;
-//     background-color: v.$color-azul-oscuro;
-//     transform: scaleX(0);
-//     transform-origin: center;
-//     transition: transform 0.3s ease-in-out;
-//   }
+  &:hover,
+  &:focus {
+    transform: scale($scale-hover);
+    background-color: color.adjust($bg-color, $lightness: -10%);
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+}
 
-//   &:hover {
-//     transform: scale(1.10);
-    
-//     &::after {
-//       transform: scaleX(1);
-//     }
-//   }
-// }
+// Hover enlaces
+@mixin hover-scale($scale: 1.3, $transition-duration: 0.4s) {
+  display: inline-block;
+  transition: transform $transition-duration ease;
+
+  &:hover,
+  &:focus {
+    transform: scale($scale);
+    outline: none;
+  }
+}
+

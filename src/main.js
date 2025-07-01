@@ -10,6 +10,7 @@ AOS.init({
 const hamMenu = document.querySelector('.ham-menu');
 const offScreenMenu = document.querySelector('.off-screen-menu');
 const logo = document.querySelector('.logo');
+const btnCitaHeader = document.querySelector(".btn-cita-header");
 const body = document.body;
 const navItems = document.querySelectorAll('.nav-list li');
 
@@ -18,6 +19,7 @@ hamMenu.addEventListener('click', () => {
   hamMenu.classList.toggle('active');
   offScreenMenu.classList.toggle('active'); // <- esto ahora controla el panel lateral
   logo.classList.toggle('invisible');
+  btnCitaHeader.classList.toggle('invisible');
 
   if (offScreenMenu.classList.contains('active')) {
     body.style.overflow = 'hidden';

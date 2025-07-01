@@ -1,0 +1,6 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/abstracts" as ab;
+
+.hover-scale {
+    @include m.hover-scale();
+}

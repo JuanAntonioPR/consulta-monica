@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1100; // asegúrate de que esté por encima del .off-screen-menu
+    z-index: 1100;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -17,19 +17,28 @@
     align-items: center;
     justify-content: space-between;
 
+    @include ab.breakpoint(tablet) {
+
+    }
+
+    .logo img {
+        width: 140px;
+
+        @include ab.breakpoint(tablet) {
+            width: 160px;
+        }
+
+        @include ab.breakpoint(desktop) {
+            width: 180px;
+        }
+    }
+
     .logo.invisible {
         visibility: hidden;
     }
 
-    .btn-cita {
-        background-color: ab.$color-accent-1;
-        color: white;
-        padding: 0.5rem 1.2rem;
-        border-radius: 0.5rem;
-        font-weight: bold;
-        font-size: 0.9rem;
-        text-decoration: none;
-        display: inline-block;
+    .btn-cita-header.invisible {
+        visibility: hidden;
     }
 
     .ham-menu {
@@ -42,6 +51,7 @@
         border: none;
         position: relative;
         z-index: 1001;
+        cursor: pointer;
 
         span {
             height: 4px;
@@ -80,7 +90,7 @@
     }
 
     .off-screen-menu {
-        background: linear-gradient(135deg, ab.$color-primary, ab.$color-secondary);
+        background: linear-gradient(135deg, rgba(ab.$color-primary, 0.95), rgba(ab.$color-secondary, 0.95));
         height: 100vh;
         width: 100vw;
         max-width: 100%;
@@ -123,10 +133,6 @@
                 color: white;
                 text-decoration: none;
             }
-        }
-
-        .btn-cita-menu {
-            margin: 1.5rem 0;
         }
     }
 }
