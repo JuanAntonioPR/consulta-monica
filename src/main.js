@@ -13,6 +13,7 @@ const logo = document.querySelector('.logo');
 const btnCitaHeader = document.querySelector(".btn-cita-header");
 const body = document.body;
 const navItems = document.querySelectorAll('.nav-list li');
+const bloquearScrollAlAbrirMenu = false; // Cambiar a true si quiero bloquear el scroll
 
 // Abre el menú cuando se hace clic en el icono de la hamburguesa
 hamMenu.addEventListener('click', () => {
@@ -22,12 +23,16 @@ hamMenu.addEventListener('click', () => {
   btnCitaHeader.classList.toggle('invisible');
 
   if (offScreenMenu.classList.contains('active')) {
-    body.style.overflow = 'hidden';
+    if (bloquearScrollAlAbrirMenu) {
+      body.style.overflow = 'hidden'; // Bloquea scroll vertical y horizontal
+    }
     navItems.forEach((item, index) => {
       item.style.transitionDelay = `${0.1 * (index + 1)}s`;
-    });  // Bloquea scroll vertical y horizontal
+    });  
   } else {
-    body.style.overflow = '';        // Restaura el overflow original
+    if (bloquearScrollAlAbrirMenu) {
+      body.style.overflow = ''; // Restaura el overflow original
+    }        
   }
 });
 
