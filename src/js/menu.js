@@ -1,47 +1,52 @@
-import './sass/style.scss';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-AOS.init({
-  duration: 800, // duración de la animación en ms
-  once: true     // solo se ejecuta una vez al hacer scroll
-});
-
+// ==============================
+//  VARIABLES
+// ==============================
 const hamMenu = document.querySelector('.ham-menu');
 const offScreenMenu = document.querySelector('.off-screen-menu');
 const logo = document.querySelector('.logo');
 const btnCitaHeader = document.querySelector(".btn-cita-header");
 const body = document.body;
 const navItems = document.querySelectorAll('.nav-list li');
-const bloquearScrollAlAbrirMenu = false; // Cambiar a true si quiero bloquear el scroll
+const bloquearScrollAlAbrirMenu = false; // Cambiar a true si quieres bloquear el scroll
 
-// Abre el menú cuando se hace clic en el icono de la hamburguesa
+// ==============================
+//  EVENTO: Toggle menú hamburguesa
+// ==============================
 hamMenu.addEventListener('click', () => {
+  // Alterna clases para abrir/cerrar el menú lateral
   hamMenu.classList.toggle('active');
-  offScreenMenu.classList.toggle('active'); // <- esto ahora controla el panel lateral
+  offScreenMenu.classList.toggle('active');
   logo.classList.toggle('invisible');
   btnCitaHeader.classList.toggle('invisible');
 
+  // Si el menú se abre
   if (offScreenMenu.classList.contains('active')) {
     if (bloquearScrollAlAbrirMenu) {
-      body.style.overflow = 'hidden'; // Bloquea scroll vertical y horizontal
+      body.style.overflow = 'hidden'; // Bloquea scroll
     }
+
+    // Aplica delays en la transición de los ítems del menú
     navItems.forEach((item, index) => {
       item.style.transitionDelay = `${0.1 * (index + 1)}s`;
-    });  
+    });
+
+  // Si el menú se cierra
   } else {
     if (bloquearScrollAlAbrirMenu) {
-      body.style.overflow = ''; // Restaura el overflow original
-    }        
+      body.style.overflow = ''; // Restaura scroll
+    }
   }
 });
 
-// Cierra el menú cuando se hace clic en un enlace del menú
+
+// ==============================
+//  EVENTO: Cerrar menú al hacer clic en un enlace
+// ==============================
 document.querySelectorAll('.nav-list a').forEach(link => {
   link.addEventListener('click', () => {
     hamMenu.classList.remove('active');
     offScreenMenu.classList.remove('active');
     logo.classList.remove('invisible');
-    body.style.overflow = '';  // Restaurar scroll
+    body.style.overflow = ''; // Restaura scroll
   });
 });
