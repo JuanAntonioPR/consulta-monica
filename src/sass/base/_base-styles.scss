@@ -5,6 +5,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  margin-top: ab.$altura-header;
+; /* Igual que la altura del header */
+}
 
 .container {
   width: 100%;
