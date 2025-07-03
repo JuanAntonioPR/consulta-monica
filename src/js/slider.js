@@ -29,5 +29,26 @@ export function initSlider(selector, customConfig = {}) {
         },
     };
 
-    return new Swiper(selector, { ...defaultConfig, ...customConfig });
+    const swiper = new Swiper(selector, { ...defaultConfig, ...customConfig });
+
+
+    // Detectar visibilidad con Intersection Observer
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                swiper.autoplay.start(); // si está visible, arrancar autoplay
+            } else {
+                swiper.autoplay.stop(); // si no, parar autoplay
+            }
+        },
+        { threshold: 0.1 } // se considera visible si al menos 10% está en viewport
+    );
+
+    observer.observe(document.querySelector(selector));
+
+    return swiper;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initSlider('.swiper');
+});
