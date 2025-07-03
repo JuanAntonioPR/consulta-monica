@@ -1,9 +1,6 @@
 @use "../abstracts/abstracts" as ab;
 
 main {
-  margin-top: 90px; /* Igual que la altura del header */
-}
-
-.container {
-  padding: 10px;
+  margin-top: ab.$altura-header;
+; /* Igual que la altura del header */
 }

@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dra. Mónica Moreno</title>
-    <link rel="icon" href="/Favicon_azul-degradado.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon_azul-degradado.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="site-header">
-      <nav class="main-nav">
+      <nav class="main-nav container">
         <a href="#inicio" class="logo">
           <img src="/src/assets/img/logo_principal_azul.png" alt="Logo Dra. Moreno" />
         </a>
@@ -45,28 +45,55 @@
     <main>
       <div class="container">
         <section id="hero" class="hero">
-          <div class="hero-images">
-            <picture>
-              <source srcset="/src/assets/img/hero1@x3.jpg" media="(min-width: 1200px)">
-              <source srcset="/src/assets/img/hero1@x2.jpg" media="(min-width: 768px)">
-              <img src="/src/assets/img/hero1.jpg" alt="Consulta médica virtual">
-            </picture>
+          <!-- Swiper container -->
+          <div class="swiper">
+            <!-- Wrapper que contiene las slides -->
+            <div class="swiper-wrapper hero-images">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/src/assets/img/hero1@x3.jpg" media="(min-width: 1200px)">
+                  <source srcset="/src/assets/img/hero1@x2.jpg" media="(min-width: 768px)">
+                  <img src="/src/assets/img/hero1.jpg" alt="Consulta médica virtual" />
+                </picture>
+              </div>
 
-            <picture>
-              <source srcset="/src/assets/img/hero2@x3.jpg" media="(min-width: 1200px)">
-              <source srcset="/src/assets/img/hero2@x2.jpg" media="(min-width: 768px)">
-              <img src="/src/assets/img/hero2.jpg" alt="Atención personalizada">
-            </picture>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/src/assets/img/hero2@x3.jpg" media="(min-width: 1200px)">
+                  <source srcset="/src/assets/img/hero2@x2.jpg" media="(min-width: 768px)">
+                  <img src="/src/assets/img/hero2.jpg" alt="Atención personalizada" />
+                </picture>
+              </div>
 
-            <!-- Y así sucesivamente -->
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/src/assets/img/hero3@x3.jpg" media="(min-width: 1200px)">
+                  <source srcset="/src/assets/img/hero3@x2.jpg" media="(min-width: 768px)">
+                  <img src="/src/assets/img/hero3.jpg" alt="Atención personalizada" />
+                </picture>
+              </div>
+              <!-- Podemos añadir más slides igual -->
+            </div>
+
+            <!-- Botones de navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Paginación -->
+            <div class="swiper-pagination"></div>
           </div>
 
+          <!-- Contenido sobre el slider -->
           <div class="hero-content">
             <h1>Atención médica cercana, cuando y donde la necesites</h1>
             <p>Consulta online cómoda, segura y personalizada.</p>
-            <button>Reserva tu cita</button>
+            <button class="btn-cita">Reserva tu cita</button>
           </div>
         </section>
+
 
         <section class="intro">
           <!-- Texto sobre utilidad de la web / objetivos -->

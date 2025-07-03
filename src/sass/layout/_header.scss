@@ -5,6 +5,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: ab.$altura-header;
     z-index: 1100;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -16,10 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    @include ab.breakpoint(tablet) {
-
-    }
+    height: ab.$altura-header;
 
     .logo img {
         width: 140px;
