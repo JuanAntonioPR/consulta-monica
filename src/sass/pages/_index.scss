@@ -1,5 +1,6 @@
 @use "../abstracts/abstracts" as ab;
 
+// Hero Section
 .hero {
     position: relative;
     height: ab.$altura-total-menos-header;
@@ -47,10 +48,10 @@
     }
 
     .hero-content {
-        max-width: 320px; // tamaño pequeño que quieres
-        padding: 1.5rem 2rem;
+        max-width: 420px; //
+        padding: 1rem;
         border-radius: 12px;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.4);
         color: white;
         position: absolute;
         top: 50%;
@@ -62,45 +63,137 @@
         flex-direction: column;
         gap: 10px;
 
-        h1 {
-            font-size: 1rem;
-            font-family: ab.$font-secondary;
+        @include ab.breakpoint(tablet) {
+            padding: 1.4rem;
+        }
+
+        .doctora {
+            font-size: ab.$font-heading-m;
+            font-style: italic;
 
             @include ab.breakpoint(tablet) {
-                font-size: 1.2rem;
+                font-size: ab.$font-heading-l;
             }
 
             @include ab.breakpoint(desktop) {
-                font-size: 1.8rem;
+                font-size: ab.$font-heading-xl;
+            }
+        }
+
+        h1 {
+            font-size: ab.$font-heading-m;
+            font-family: ab.$font-primary;
+            color: ab.$color-accent-1;
+            text-shadow: 2px 2px 4px #000000;
+
+            @include ab.breakpoint(tablet) {
+                font-size: calc(ab.$font-heading-l + 2px);
+            }
+
+            @include ab.breakpoint(desktop) {
+                font-size: calc(ab.$font-heading-xl + 2px);
             }
         }
 
         p {
-            font-size: 0.9rem;
-            font-family: ab.$font-secondary;
+            font-size: ab.$font-body-m;
             font-style: italic;
 
             @include ab.breakpoint(tablet) {
-                font-size: 1.2rem;
+                font-size: ab.$font-body-l;
             }
 
             @include ab.breakpoint(desktop) {
-                font-size: 1.4rem;
+                font-size: calc(ab.$font-body-l + 4px);
             }
         }
 
-        button {
-            margin-top: 2rem;
-            padding: 0.75rem 1.5rem;
-            color: #333;
-            cursor: pointer;
-            font-size: 0.8rem;
-            text-transform: none;
-            transition: color 0.3s ease, transform 0.3s ease;
-            
-            &:hover {
-                color: white;
-                transform: scale(1.1);
+        a {
+
+            button {
+                margin-top: 1rem;
+                padding: 0.75rem 1.5rem;
+                color: #333;
+                cursor: pointer;
+                font-size: ab.$font-body-s;
+                text-transform: none;
+                transition: color 0.3s ease, transform 0.3s ease;
+                
+                @include ab.breakpoint(tablet) {
+                    font-size: ab.$font-body-l;
+                }
+    
+                @include ab.breakpoint(desktop) {
+                    font-size: calc(ab.$font-body-l + 2px);
+                }
+    
+                &:hover {
+                    color: white;
+                    transform: scale(1.1);
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+// Intro Section
+.intro {
+    height: ab.$altura-total-menos-header;
+    width: 100%;
+    overflow: hidden;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(ab.$color-primary, 0.9), rgba(ab.$color-secondary, 0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include ab.breakpoint(tablet) {
+        padding: 30px;
+    }
+
+    @include ab.breakpoint(desktop) {
+        padding: 50px;
+    }
+
+
+    .container {
+        padding: 20px;
+        border: 1px solid ab.$color-primary;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-top-right-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: white;
+        box-shadow: 4px 4px 8px rgba(ab.$color-primary, 0.4);
+
+        @include ab.breakpoint(tablet) {
+            gap: 25px;
+            padding: 30px;
+        }
+
+        @include ab.breakpoint(desktop) {
+            gap: 30px;
+            padding: 50px;
+        }
+
+        p {
+            text-align: center;
+            font-size: ab.$font-body-m;
+
+            @include ab.breakpoint(mobilexs) {
+                font-size: calc(ab.$font-body-m - 4px);
+            }
+
+            @include ab.breakpoint(tablet) {
+                font-size: ab.$font-body-l;
+            }
+
+            @include ab.breakpoint(desktop) {
+                font-size: calc(ab.$font-body-l + 4px);
             }
         }
     }

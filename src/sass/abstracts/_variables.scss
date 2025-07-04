@@ -1,8 +1,10 @@
 // Breakpoints (Mobile First)
-$bp-tablet: 768px;             // Tablet vertical
+$bp-mobile-xs: 399px;        // Móviles muy pequeños (iPhone SE, Android compactos), uso max-width
+$bp-mobile: 400px;           // Móvil estándar, base sin media query
+$bp-tablet: 768px;           // Tablet vertical
 $bp-tablet-horizontal: 1024px; // Tablet horizontal / portátil pequeño
-$bp-desktop: 1200px;           // Escritorio normal
-$bp-desktop-xl: 1440px;        // Pantallas grandes
+$bp-desktop: 1200px;         // Escritorio normal
+$bp-desktop-xl: 1440px;      // Pantallas grandes
 
 // Colores
 $color-primary: #035278;
@@ -23,8 +25,8 @@ $font-primary: 'Poppins', sans-serif;
 $font-secondary: 'Lora', serif;
 
 // Tamaño fuentes
-$font-heading-xl: 2.75rem; // ~44px
-$font-heading-l:  2.25rem; // ~36px
+$font-heading-xl: 2rem;    // ~32px
+$font-heading-l:  1.75rem; // ~28px
 $font-heading-m:  1.5rem;  // ~24px
 $font-body-l:     1.25rem; // ~20px
 $font-body-m:     1rem;    // ~16px

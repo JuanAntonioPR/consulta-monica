@@ -3,6 +3,12 @@
 
 // Breakpoints
 @mixin breakpoint($bp) {
+  @if $bp == mobilexs {
+    @media (max-width: v.$bp-mobile-xs) {
+      @content;
+    }
+  }
+
   @if $bp == tablet {
     @media (min-width: v.$bp-tablet) {
       @content;

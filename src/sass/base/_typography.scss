@@ -8,11 +8,11 @@ body {
 }
 
 h1 {
-  font-size: ab.$font-heading-xl;
+  font-size: ab.$font-heading-l;
 }
 
 h2 {
-  font-size: ab.$font-heading-l;
+  font-size: ab.$font-heading-m;
 }
 
 h3 {
@@ -20,6 +20,7 @@ h3 {
 }
 
 p {
+  font-family: ab.$font-secondary;
   font-size: ab.$font-body-m;
   line-height: 1.6;
 }
