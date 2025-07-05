@@ -1,15 +1,18 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/abstracts" as ab;
 
-.button {
-    @include m.button(#007bff, #fff, 1.1, 0.35s);
+// Botón principal
+.btn-minimal {
+  @include m.minimal-button();
 }
 
+// Botones de acción "pedir cita"
 .btn-cita {
-    @include m.button(ab.$color-accent-1, #fff, 1.15, 0.4s);
+    @include m.button(ab.$color-accent-1, #fff, 1.1, 0.3s);
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
 
     @include ab.breakpoint(tablet) {
         font-size: 1.1rem;

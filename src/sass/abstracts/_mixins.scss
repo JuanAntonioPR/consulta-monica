@@ -39,7 +39,6 @@
   display: inline-block;
   background-color: $bg-color;
   color: $color;
-  padding: 0.4rem 0.8rem;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 0.8rem;
   cursor: pointer;
@@ -66,6 +65,64 @@
   &:focus {
     transform: scale($scale);
     outline: none;
+  }
+}
+
+// Botón minimal https://www.youtube.com/watch?v=B7Z6qERVTvM
+// <a href="#"><span>Button</span></a>@mixin minimal-button(
+@mixin minimal-button {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  border: 2px solid v.$color-primary;
+  text-transform: uppercase;
+  color: grey;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 12px);
+    background: #fff;
+    transition: 0.5s ease-in-out;
+    transform: scaleY(1);
+    transition-delay: 0.5s;
+  }
+
+  &:hover:before {
+    transform: scaleY(0);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% - 12px);
+    background: #fff;
+    transition: 0.5s ease-in-out;
+    transform: scaleX(1);
+  }
+
+  &:hover:after {
+    transform: scaleX(0);
+  }
+
+  &:hover {
+    color: v.$color-primary;
+  }
+
+  span {
+    position: relative;
+    z-index: 3;
   }
 }
 
