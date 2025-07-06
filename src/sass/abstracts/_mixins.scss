@@ -46,7 +46,7 @@
   position: relative;
   display: inline-block;
   width: 200px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 15px 30px;
   border: 2px solid v.$color-primary;
   text-transform: uppercase;
@@ -103,7 +103,7 @@
   }
 }
 
-// Botón resaltados
+// Botón resaltado
 @mixin button($bg-color, $color, $scale-hover: 1.05, $transition-duration: 0.3s) {
   display: inline-block;
   background-color: $bg-color;

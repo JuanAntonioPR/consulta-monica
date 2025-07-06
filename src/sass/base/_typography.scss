@@ -8,19 +8,61 @@ body {
 }
 
 h1 {
-  font-size: ab.$font-heading-l;
+  font-size: ab.$font-heading-xl;
+  font-family: ab.$font-primary;
+  color: ab.$color-accent-1;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: ab.$font-heading-m;
+  font-family: ab.$font-primary;
+  font-size: ab.$font-heading-xl;
+  font-weight: 200;
+  color: grey;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 10px 0px;
+
+  @include ab.breakpoint(mobilexs) {
+      font-size: ab.$font-heading-l;
+  }
+
+  @include ab.breakpoint(tablet) {
+      font-size: calc(ab.$font-heading-xl + 4px);
+      margin: 20px 0px;
+  }
+
+  @include ab.breakpoint(desktop) {
+      font-size: calc(ab.$font-heading-xl + 8px);
+  }
 }
 
 h3 {
+  font-family: ab.$font-secondary;
+  font-weight: 300;
+  font-style: italic;
   font-size: ab.$font-heading-m;
+  color: ab.$color-primary;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-family: ab.$font-secondary;
+  font-weight: 300;
+  font-style: italic;
+  font-size: calc(ab.$font-heading-m - 2px);
+  color: ab.$color-primary;
+  margin-bottom: 20px;
 }
 
 p {
   font-family: ab.$font-secondary;
-  font-size: ab.$font-body-m;
+  font-size: calc(ab.$font-body-m + 2px);
   line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+li {
+  font-size: calc(ab.$font-body-m + 2px);
+  margin-bottom: 15px;
 }
