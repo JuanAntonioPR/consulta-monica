@@ -2,7 +2,7 @@
 
 blockquote {
   border-left: 4px solid ab.$color-primary;
-  padding: 0.5rem;
+  padding: 1rem;
   padding-left: 2rem;
   margin: 2rem 0;
   font-family: ab.$font-secondary;
@@ -10,6 +10,7 @@ blockquote {
   color: ab.$color-muted;
   background-color: rgba(ab.$color-primary, 0.05);
   border-radius: 0.8rem;
+  border-top-left-radius: none;
   line-height: 1.5;
   font-size: 1rem;
   position: relative;
