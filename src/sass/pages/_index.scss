@@ -157,12 +157,17 @@
     height: auto;
     width: 100%;
     overflow: hidden;
-    padding: 15px;
+    padding: 25px;
     background: linear-gradient(135deg, rgba(ab.$color-primary, 0.9), rgba(ab.$color-secondary, 0.6));
     display: flex;
     align-items: center;
     justify-content: center;
 
+    @include ab.breakpoint(mobilexs) {
+        padding: 15px;
+    }
+
+    
     @include ab.breakpoint(tablet) {
         padding: 30px 70px;
     }
@@ -202,32 +207,39 @@
 
 // Proxima-apertura Section
 .proxima-apertura {
-    background-color: #fff4e5; // color cálido, tipo aviso positivo
-    padding: 1.2rem;
-    margin: 3rem auto;
-    border-radius: 14px;
-    text-align: center;
-    box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.15);
-    font-size: 1.1rem;
-    max-width: 300px;
-    animation: zoomLoop 4s ease infinite;
-
-    @include ab.breakpoint(tablet) {
-        max-width: 500px;
+    @include ab.breakpoint(mobilexs) {
+        padding: 30px;
     }
 
-    @include ab.breakpoint(desktop) {
-        max-width: 600px;
-    }
+    .container {
+        background-color: #fff4e5; // color cálido, tipo aviso positivo
+        padding: 1.2rem;
+        margin: 3rem auto;
+        border-radius: 14px;
+        text-align: center;
+        box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.15);
+        font-size: 1.1rem;
+        max-width: 300px;
+        animation: zoomLoop 4s ease infinite;
 
-    p::before {
-        content: "⚠️";
-        margin-right: 0.5rem;
-        font-size: 1.2em;
-    }
 
-    strong {
-        color: ab.$color-primary;
+        @include ab.breakpoint(tablet) {
+            max-width: 500px;
+        }
+
+        @include ab.breakpoint(desktop) {
+            max-width: 600px;
+        }
+
+        p::before {
+            content: "⚠️";
+            margin-right: 0.5rem;
+            font-size: 1.2em;
+        }
+
+        strong {
+            color: ab.$color-primary;
+        }
     }
 }
 
@@ -398,12 +410,122 @@
 
 // Quote Section
 .quote {
-    min-width: 350px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    .container {
+        min-width: 350px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        
+        @include ab.breakpoint(mobilexs) {
+            min-width: 100%;
+        }
 
-    blockquote {
-        box-shadow: 2px 2px 10px rgba(ab.$color-primary, 0.4);
+        blockquote {
+            box-shadow: 2px 2px 10px rgba(ab.$color-primary, 0.4);
+        } 
+    }
+}
+
+// Servicios Section
+.servicios {
+    min-height: ab.$altura-total-menos-header;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include ab.breakpoint(tablet) {
+        padding: 30px 50px;
+    }
+
+    @include ab.breakpoint(desktop) {
+        padding: 50px 110px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .tarjetas-servicio {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+
+            @include ab.breakpoint(tablet) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include ab.breakpoint(desktop) {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 60px;
+            }
+
+            .tarjeta-servicio {
+                // background: linear-gradient(to bottom, rgba(ab.$color-primary, 0.2), rgba(ab.$color-secondary, 0.4));
+                background-color: rgba(ab.$color-primary, 0.3);
+                transition: background-color 0.4s ease;   
+                border: 1px solid rgba(ab.$color-primary, 0.7);
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                border-bottom-left-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+                border-top-right-radius: 2rem;
+                transition: background-color 0.4s ease, transform 0.4s ease;   
+
+                &:hover {
+                    // background: linear-gradient(to bottom, rgba(ab.$color-primary, 0.6), rgba(ab.$color-secondary, 0.8));
+                    background-color: rgba(ab.$color-primary, 0.7);
+                    transform: scale(1.05);
+
+                    h3 {
+                        font-weight: 500;
+                        color: white;
+                    }
+                    
+                    p {
+                        color: white;
+                    }
+
+                    img {
+                        opacity: 1;
+                        filter: brightness(0) invert(1);
+                    }
+                }
+
+                img {
+                    width: 80px;
+                    opacity: 0.7;
+                    transition: opacity 0.4s ease, filter 0.4s ease;
+                    
+                };
+
+                h3 {
+                    text-align: center;
+                    transition: color 0.4s ease;
+
+                    @include ab.breakpoint(tablet) {
+                        min-height: 4.8rem;
+                    }
+
+                    @include ab.breakpoint(desktop) {
+                        min-height: 4.8rem;
+                    }
+                }
+
+                p {
+                    text-align: center;
+                    transition: color 0.4s ease;
+                }
+            }
+        }
     }
 }

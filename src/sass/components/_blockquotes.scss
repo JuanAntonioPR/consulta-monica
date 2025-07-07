@@ -10,9 +10,7 @@ blockquote {
   color: ab.$color-muted;
   background-color: rgba(ab.$color-primary, 0.05);
   border-radius: 0.8rem;
-  border-top-left-radius: none;
   line-height: 1.5;
-  font-size: 1rem;
   position: relative;
 
   &::before {
