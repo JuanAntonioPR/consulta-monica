@@ -3,12 +3,12 @@
 
 // Botón principal
 .btn-minimal {
-  @include m.minimal-button();
+  @include m.button-minimal();
 }
 
 // Botones de acción "pedir cita"
 .btn-cita {
-    @include m.button(ab.$color-accent-1, #fff, 1.1, 0.3s);
+    @include m.button-cta(ab.$color-accent-1, #fff, 1.1, 0.3s);
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -35,4 +35,9 @@
     @include ab.breakpoint(desktop) {
         font-size: 1.1rem;
     }
+}
+
+// Botón para las tarjetas de servicios
+.btn-servicio {
+    @include m.button-service;
 }

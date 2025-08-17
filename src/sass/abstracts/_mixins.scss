@@ -42,7 +42,7 @@
 
 // Botón minimal https://www.youtube.com/watch?v=B7Z6qERVTvM
 // <a href="#"><span>Button</span></a>@mixin minimal-button(
-@mixin minimal-button {
+@mixin button-minimal {
   position: relative;
   display: inline-block;
   width: 200px;
@@ -104,8 +104,8 @@
   }
 }
 
-// Botón resaltado
-@mixin button($bg-color, $color, $scale-hover: 1.05, $transition-duration: 0.3s) {
+// Botón call to action (reservar cita)
+@mixin button-cta($bg-color, $color, $scale-hover: 1.05, $transition-duration: 0.3s) {
   display: inline-block;
   background-color: $bg-color;
   color: $color;
@@ -123,6 +123,28 @@
     background-color: color.adjust($bg-color, $lightness: -10%);
     outline: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+// Botón para las tarjetas de servicios ("saber más")
+@mixin button-service($color: #035278, $transition-duration: 0.2s) {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid $color;
+  border-radius: 0.6rem;
+  background-color: transparent;
+  color: $color;
+  font-size: 0.95rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color $transition-duration ease, color $transition-duration ease;
+
+  &:hover,
+  &:focus {
+    background-color: $color;
+    color: #fff;
+    outline: none;
   }
 }
 
