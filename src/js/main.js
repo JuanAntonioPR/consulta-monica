@@ -3,6 +3,7 @@ import '../sass/style.scss';
 
 // Importamos módulos .js
 import './menu.js';
+import './preguntas-frecuentes.js';
 
 // Importo AOS para animaciones
 import AOS from 'aos';

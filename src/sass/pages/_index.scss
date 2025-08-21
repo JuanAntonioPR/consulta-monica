@@ -432,17 +432,17 @@
     height: auto;
     width: 100%;
     overflow: hidden;
-    padding: 25px;
+    padding: 25px 25px 50px 25px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     @include ab.breakpoint(tablet) {
-        padding: 30px 50px;
+        padding: 30px 40px 60px 40px;
     }
 
     @include ab.breakpoint(desktop) {
-        padding: 50px 110px;
+        padding: 50px 60px 90px 60px;
     }
 
     .container {
@@ -518,5 +518,19 @@
                 }
             }
         }
+    }
+}
+
+// Preguntas frecuentes Section
+.preguntas-frecuentes {
+    background: linear-gradient(0deg, rgba(ab.$color-secondary, 0.3), white);
+    padding: 50px 0px 80px 0px;
+
+    @include ab.breakpoint(mobilexs) {
+        padding: 30px 0px 60px 0px;
+    }
+
+    @include ab.breakpoint(desktop) {
+        padding: 60px 0px 90px 0px;
     }
 }

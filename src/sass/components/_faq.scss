@@ -1,0 +1,146 @@
+@use "../abstracts/abstracts" as ab;
+
+#preguntas-frecuentes .container {
+  margin: 0 auto;
+  max-width: calc(100vw - 50px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include ab.breakpoint(tablet) {
+    max-width: 718px;
+  }
+
+  .tab {
+    position: relative;
+    background: #fff;
+    padding: 0 40px 20px 20px;
+    box-shadow: 0 15px 25px rgba(ab.$color-primary, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+
+    input {
+      appearance: none;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &::after {
+        content: "+";
+        position: absolute;
+        right: 20px;
+        font-size: 2em;
+        color: rgba(ab.$color-primary, 0.4);
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      h3 {
+        width: 40px;
+        height: 40px;
+        background: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: ab.$font-body-m;
+        border-radius: 5px;
+        margin-right: 10px;
+        margin-bottom: 0px;
+        font-family: ab.$font-primary;
+        font-style: normal;
+        font-weight: 500;
+
+        @include ab.breakpoint(tablet) {
+          font-size: ab.$font-body-l;
+        }
+      }
+
+      h4 {
+        position: relative;
+        font-family: ab.$font-primary;
+        font-style: normal;
+        font-weight: 500;
+        font-size: ab.$font-body-m;
+        color: ab.$color-muted;
+        z-index: 10;
+        margin-bottom: 0px;
+
+        @include ab.breakpoint(tablet) {
+          font-size: ab.$font-body-l;
+        }
+      }
+    }
+
+    .content {
+      max-height: 0;
+      transition: max-height 0.3s ease;
+      overflow: hidden;
+
+      p {
+        position: relative;
+        padding: 10px 0;
+        color: ab.$color-muted;
+        z-index: 10;
+        font-family: ab.$font-primary;
+        font-weight: 300;
+      }
+    }
+
+    input:checked ~ label::after {
+      transform: rotate(135deg);
+      color: #fff;
+    }
+
+    &:hover label::after {
+      color: ab.$color-primary;
+    }
+
+    input:checked ~ label h3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: rgba(255,255,255,0.2);
+      font-size: 8em;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    input:checked ~ label h4 {
+      background: #fff;
+      max-width: 95%;
+      padding: 2px 10px;
+      color: ab.$color-muted;
+      border-radius: 2px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    input:checked ~ .content {
+      max-height: 100vh;
+
+      p {
+        color: #fff;
+      }
+    }
+  }
+
+  .tab:nth-child(2) label h3 {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);;
+  }
+
+  .tab:nth-child(3) label h3 {
+    background: linear-gradient(135deg, #ffe259, #ffa751);
+  }
+
+  .tab:nth-child(4) label h3 {
+    background: linear-gradient(135deg, #acbb78, #799f0c);
+  }
+
+  .tab:nth-child(5) label h3 {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  }
+}
