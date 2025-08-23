@@ -87,6 +87,17 @@
         z-index: 10;
         font-family: ab.$font-primary;
         font-weight: 300;
+        overflow-wrap: break-word;
+
+        a {
+          color: white;
+          font-weight: bold;
+          text-decoration: none;
+
+          &:hover {
+            color: #4FC3F7;
+          }
+        }
       }
     }
 
@@ -130,18 +141,42 @@
   }
 
   .tab:nth-child(2) label h3 {
-    background: linear-gradient(135deg, #6dd5ed, #2193b0);;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
   }
 
   .tab:nth-child(3) label h3 {
-    background: linear-gradient(135deg, #ffe259, #ffa751);
+    background: linear-gradient(135deg, #f25ede, #cd4bbb);
   }
 
   .tab:nth-child(4) label h3 {
-    background: linear-gradient(135deg, #acbb78, #799f0c);
+    background: linear-gradient(135deg, #f7b733, #fc4a1a);
   }
 
   .tab:nth-child(5) label h3 {
+    background: linear-gradient(135deg, #63be2e, #29620b);
+  }
+
+  .tab:nth-child(6) label h3 {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  }
+
+  .tab:nth-child(7) label h3 {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+  }
+
+  .tab:nth-child(8) label h3 {
+    background: linear-gradient(135deg, #f25ede, #cd4bbb);
+  }
+  
+  .tab:nth-child(9) label h3 {
+    background: linear-gradient(135deg, #f7b733, #fc4a1a);
+  }
+
+  .tab:nth-child(10) label h3 {
+    background: linear-gradient(135deg, #63be2e, #29620b);
+  }
+
+  .tab:nth-child(11) label h3 {
     background: linear-gradient(135deg, #8e2de2, #4a00e0);
   }
 }
