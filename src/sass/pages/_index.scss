@@ -535,3 +535,62 @@
         padding: 60px 0px 90px 0px;
     }
 }
+
+// Opiniones Section
+.opiniones {
+    padding: 3rem 1.5rem;
+    background-color: #f9f9f9;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 32px;
+    }
+
+    .contenedor-opiniones {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 24px;
+
+        @include ab.breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .opinion {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+
+            .texto-opinion {
+                flex: 1;
+                font-style: italic;
+                color: ab.$color-muted;
+                margin-bottom: 1rem;
+            }
+
+            .valoracion {
+                margin-bottom: 10px;
+                .estrella {
+                    font-size: 1.2rem;
+                    color: #FFD700; // dorado
+                    margin-right: 2px;
+                }
+            }
+
+            .autor-opinion {
+                font-weight: 600;
+                color: ab.$color-primary;
+            }
+
+            &:hover {
+                transform: translateY(-5px);
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+}
