@@ -1,0 +1,46 @@
+// Proxima-apertura Section
+.proxima-apertura {
+    @include ab.breakpoint(mobilexs) {
+        padding: 30px;
+    }
+
+    .container {
+        background-color: #fff4e5; // color cálido, tipo aviso positivo
+        padding: 1.2rem;
+        margin: 3rem auto;
+        border-radius: 14px;
+        text-align: center;
+        box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.15);
+        font-size: 1.1rem;
+        max-width: 300px;
+        animation: zoomLoop 4s ease infinite;
+
+
+        @include ab.breakpoint(tablet) {
+            max-width: 500px;
+        }
+
+        @include ab.breakpoint(desktop) {
+            max-width: 600px;
+        }
+
+        p::before {
+            content: "⚠️";
+            margin-right: 0.5rem;
+            font-size: 1.2em;
+        }
+
+        strong {
+            color: ab.$color-primary;
+        }
+    }
+}
+
+    @keyframes zoomLoop {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.03);
+        }
+    }

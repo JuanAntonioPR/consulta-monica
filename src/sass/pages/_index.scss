@@ -158,7 +158,9 @@
     width: 100%;
     overflow: hidden;
     padding: 25px;
-    background: linear-gradient(135deg, rgba(ab.$color-primary, 0.9), rgba(ab.$color-secondary, 0.6));
+    background: linear-gradient(to right, rgba(ab.$color-secondary, 0.4), rgba(ab.$color-secondary, 0.6)),
+        linear-gradient(to bottom, rgba(255,255,255,0) 60%, white 100%);
+    background-blend-mode: screen;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,53 +206,6 @@
         }
     }
 }
-
-// Proxima-apertura Section
-.proxima-apertura {
-    @include ab.breakpoint(mobilexs) {
-        padding: 30px;
-    }
-
-    .container {
-        background-color: #fff4e5; // color cálido, tipo aviso positivo
-        padding: 1.2rem;
-        margin: 3rem auto;
-        border-radius: 14px;
-        text-align: center;
-        box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.15);
-        font-size: 1.1rem;
-        max-width: 300px;
-        animation: zoomLoop 4s ease infinite;
-
-
-        @include ab.breakpoint(tablet) {
-            max-width: 500px;
-        }
-
-        @include ab.breakpoint(desktop) {
-            max-width: 600px;
-        }
-
-        p::before {
-            content: "⚠️";
-            margin-right: 0.5rem;
-            font-size: 1.2em;
-        }
-
-        strong {
-            color: ab.$color-primary;
-        }
-    }
-}
-
-    @keyframes zoomLoop {
-        0%, 100% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.03);
-        }
-    }
 
 // Videoconsulta Section
 .videoconsulta {
@@ -524,7 +479,7 @@
 
 // Preguntas frecuentes Section
 .preguntas-frecuentes {
-    background: linear-gradient(0deg, rgba(ab.$color-secondary, 0.3), white);
+    background: linear-gradient(to bottom,  white, rgba(ab.$color-secondary, 0.4));
     padding: 50px 0px 80px 0px;
 
     @include ab.breakpoint(mobilexs) {
