@@ -1,9 +1,19 @@
-.page-videoconsulta {
-    a {
-        text-decoration: none;
+@use "../abstracts/abstracts" as ab;
 
-        &:hover {
-            color: #4FC3F7;
+.page-videoconsulta {
+    section {
+        padding: 25px;
+
+        @include ab.breakpoint(tablet) {
+            padding: 25px 75px;
         }
+
+        @include ab.breakpoint(desktop) {
+            padding: 35px 75px;
+        }
+    }
+
+    .durante-consulta, .reserva, .agenda {
+        background-color: rgba(ab.$color-primary, 0.05);
     }
 }
