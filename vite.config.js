@@ -14,8 +14,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
 
         // Páginas secundarias (activarlas cuando las tengamos listas)
+        videoconsulta: resolve(__dirname, 'html/videoconsulta.html'),
         // ejemplo: resolve(__dirname, 'html/ejemplo.html'),
-        // curriculum: resolve(__dirname, 'html/curriculum.html'),
         // contacto: resolve(__dirname, 'html/contacto.html'),
       },
     },

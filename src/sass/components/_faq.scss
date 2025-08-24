@@ -107,6 +107,11 @@
       color: #fff;
     }
 
+    &:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease;
+    }
+
     &:hover label::after {
       color: ab.$color-primary;
     }
