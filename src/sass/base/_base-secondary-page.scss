@@ -50,13 +50,13 @@
         .faq-number {
             font-size: 80px;
             font-weight: bold;
-            color: rgba(#000, 0.05);
+            color: rgba(ab.$color-primary, 0.2);
             flex-shrink: 0;
             transition: color 1s ease;
         }
 
         .faq-number.highlight {
-            color: rgba(#000, 0.5);
+            color: rgba(ab.$color-primary, 0.7);
         }
 
         .faq-content {
@@ -134,7 +134,7 @@
     }
 
     section.highlight {
-        background-color: rgba(#000, 0.05);
+        background-color: rgba(ab.$color-primary, 0.15);
         transition: background-color 1s ease;
     }
 

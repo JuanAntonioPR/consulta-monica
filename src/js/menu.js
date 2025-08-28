@@ -1,3 +1,14 @@
+/* 
+  Este módulo gestiona el menú de navegación principal de la web.
+  Funcionalidades:
+  - Toggle del menú hamburguesa lateral al hacer clic.
+  - Controla la visibilidad del logo y del botón de cita en el header.
+  - Opcionalmente bloquea el scroll del body al abrir el menú.
+  - Aplica un retraso en la animación de cada ítem del menú.
+  - Cierra automáticamente el menú al hacer clic en un enlace de navegación. 
+*/
+
+
 // ==============================
 //  VARIABLES
 // ==============================

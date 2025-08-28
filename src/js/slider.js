@@ -1,3 +1,12 @@
+/* 
+    Este módulo configura e inicializa el slider Swiper en la página principal.
+    - Usa efecto 'fade' con fundido cruzado.
+    - Controla autoplay: las imágenes avanzan cada 4s.
+    - Pausa y reanuda el autoplay según la visibilidad del slider en pantalla (Intersection Observer).
+    - Incluye navegación (flechas) y paginación (puntos) configurables.
+    - Se inicializa automáticamente al cargar el DOM.
+*/
+
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -7,48 +16,24 @@ import 'swiper/css/effect-fade';
 
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 
-export function initSlider(selector, customConfig = {}) {
-    const defaultConfig = {
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true // para que la transición sea de fundido cruzado
-        },
-        speed: 4000, // duración de la transición en ms (4 segundos)
-        // loop: true,  // Cuando lo activo, me da problemas al hacer clic.
-        autoplay: {
-            delay: 4000,    // tiempo que la imagen está visible
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    };
-
-    const swiper = new Swiper(selector, { ...defaultConfig, ...customConfig });
-
-
-    // Detectar visibilidad con Intersection Observer
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-                swiper.autoplay.start(); // si está visible, arrancar autoplay
-            } else {
-                swiper.autoplay.stop(); // si no, parar autoplay
-            }
-        },
-        { threshold: 0.1 } // se considera visible si al menos 10% está en viewport
-    );
-
-    observer.observe(document.querySelector(selector));
-
-    return swiper;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  initSlider('.swiper');
+  const swiper = new Swiper('.swiper', {
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    speed: 4000,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    pagination: { el: '.swiper-pagination', clickable: true },
+  });
+
+  // Pausar/reanudar autoplay según visibilidad
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) swiper.autoplay.start();
+      else swiper.autoplay.stop();
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(document.querySelector('.swiper'));
 });
