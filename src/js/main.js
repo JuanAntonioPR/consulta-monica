@@ -4,6 +4,7 @@ import '../sass/style.scss';
 // Importamos módulos .js
 import './menu.js';
 import './preguntas-frecuentes.js';
+import './secondary-page-sections-highlight.js';
 
 // Importo AOS para animaciones
 import AOS from 'aos';
