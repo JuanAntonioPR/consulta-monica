@@ -125,7 +125,8 @@
         }
 
         a {
-            text-decoration: none; 
+            text-decoration: none;
+            color: ab.$color-primary;
             
             &:hover { 
                 color: #4FC3F7; 
