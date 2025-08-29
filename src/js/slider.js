@@ -17,7 +17,12 @@ import 'swiper/css/effect-fade';
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const swiper = new Swiper('.swiper', {
+  const swiperEl = document.querySelector('.swiper');
+
+  // Solo inicializamos si el slider existe en la página
+  if (!swiperEl) return;
+
+  const swiper = new Swiper(swiperEl, {
     effect: 'fade',
     fadeEffect: { crossFade: true },
     speed: 4000,
@@ -35,5 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
     { threshold: 0.1 }
   );
 
-  observer.observe(document.querySelector('.swiper'));
+  observer.observe(swiperEl);
 });

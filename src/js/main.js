@@ -8,10 +8,12 @@
 import '../sass/style.scss';
 
 // Importamos módulos .js
-import './menu.js';
+import './menu-hamburguesa.js';
 import './slider.js';
 import './preguntas-frecuentes.js';
 import './secondary-page-sections-highlight.js';
+import './modal-cita.js';
+import './index-logo-scroll.js';
 
 // Importo AOS para animaciones
 import AOS from 'aos';

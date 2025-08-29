@@ -12,11 +12,11 @@
   <body>
     <header class="site-header">
       <nav class="main-nav container">
-        <a href="#inicio" class="logo">
+        <a href="index.html" class="logo">
           <img src="/src/assets/img/logo_principal_azul.png" alt="Logo Dra. Moreno" />
         </a>
 
-        <a href="#contacto" class="btn-cita-header">Pedir cita</a>
+        <a href="#" class="btn-cita-header" data-modal-target="#modal-cita">Pedir cita</a>
 
         <!-- Hamburguesa -->
         <button class="ham-menu" aria-label="Abrir menú">
@@ -37,7 +37,7 @@
           </ul>
 
           <!-- Botón que aparece en el menú lateral -->
-          <a href="#contacto" class="btn-cita-header">Pedir cita</a>
+          <a href="#" class="btn-cita-header" data-modal-target="#modal-cita">Pedir cita</a>
         </div>
       </nav>
     </header>
@@ -91,7 +91,7 @@
             <h3 class="doctora">Dra. Mónica Moreno</h3>
             <h1>Consulta digestiva</h1> 
             <p>Atención cercana: cúando y dónde la necesites.</p>
-            <a href="#contacto" class="btn-cita">Reserva tu cita</a>
+            <a href="#" class="btn-cita" data-modal-target="#modal-cita">Reserva tu cita</a>
             
           </div>
         </section>
@@ -259,11 +259,7 @@
                 <h4>¿Cómo accedo a la videoconsulta?</h4>
               </label>
               <div class="content">
-                <p>Con un solo clic: previo a tu cita, recibirás un enlace de 
-                  <a href="https://www.doctoralia.es/monica-moreno-lopez/" target="_blank" rel="noopener noreferrer">
-                    Doctoralia
-                  </a>  
-                  (email o WhatsApp) y solo tendrás que entrar a la hora indicada.
+                <p>Con un solo clic: previo a tu cita, recibirás un enlace de <strong>Doctoralia</strong> (email o WhatsApp) y solo tendrás que entrar a la hora indicada.
                 </p>
               </div>
             </div>
@@ -275,7 +271,7 @@
                 <h4>¿Cuánto cuesta la videoconsulta?</h4>
               </label>
               <div class="content">
-                <p>- Primera consulta: 100 €.<br>
+                <p>- Primera consulta: 110 €.<br>
                 - Consulta de seguimiento: 80 €.</p>
               </div>
             </div>
@@ -287,11 +283,7 @@
                 <h4>¿Cuál es la forma de pago?</h4>
               </label>
               <div class="content">
-                <p>El pago se realiza de forma <b>segura</b> a través de <strong>plataforma de pago online</strong> de 
-                  <a href="https://www.doctoralia.es/monica-moreno-lopez/" target="_blank" rel="noopener noreferrer">
-                    Doctoralia
-                  </a> 
-                  . <br><br>
+                <p>El pago se realiza de forma <b>segura</b> a través de <strong>plataforma de pago online</strong> de Doctoralia. <br><br>
                   Doctoralia cobra al momento de reservar la cita. Siempre podrás cancelar hasta 24 horas antes de la cita y recibir un reembolso.
                 </p>
               </div>
@@ -316,16 +308,11 @@
                 <h4>¿La Dra. Moreno tiene consulta presencial?</h4>
               </label>
               <div class="content">
-                <p>Sí, atiendo de forma presencial en el <strong>Hospital Quirónsalud Toledo</strong>. Puedes reservar
-                  <a href="./html/reserva-tu-cita.html">
-                    aquí 
-                  </a>
-                  o en la web de 
+                <p>Sí, atiendo de forma presencial en el <strong>Hospital Quirónsalud Toledo</strong>. Puedes reservar en la web de 
                   <a href="https://www.quironsalud.com/es/cita-medica#r!/n!/1?dir=prev" target="_blank" rel="noopener noreferrer">
                     Quirónsalud Toledo.
                   </a><br><br>
-                  También puedes llamar al <a href="tel:+34925266100">925266100</a>
-                  .
+                  También puedes llamar al teléfono de Quirónsalud Toledo y reservar conmigo: <a href="tel:+34925266100">925266100</a>.
                 </p>
               </div>
             </div>
@@ -397,13 +384,36 @@
           </div>
         </section>
 
-        <section id="blog">
+        <section id="blog" class="blog">
           <!-- Resumen entradas del blog -->
         </section>
 
-        <section id="contacto">
+        <section id="contacto" class="contacto">
           <!-- Formulario de contacto / botón para WhatsApp -->
         </section>
+
+        <!-- Modal de reservas -->
+        <div id="modal-cita" class="modal-cita">
+          <div class="modal-overlay"></div>
+          <div class="modal-content">
+            <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+            <h2>Reserva tu cita</h2>
+            <p>Elige tu tipo de consulta:</p>
+            
+            <div class="modal-options">
+              <div class="modal-option">
+                <h3>Videoconsulta</h3>
+                <p>Reserva tu videoconsulta a través de Doctoralia.</p>
+                <a href="https://www.doctoralia.es/monica-moreno-lopez/" target="_blank" class="btn-cita">Reservar videoconsulta</a>
+              </div>
+              <div class="modal-option">
+                <h3>Consulta presencial</h3>
+                <p>Reserva tu cita en el Hospital Quirónsalud Toledo o llama al <a href="tel:+34925266100" class="phone">925266100</a>.</p>
+                <a href="https://www.quironsalud.com/es/cita-medica#r!/n!/1?dir=prev" target="_blank" class="btn-cita">Reservar presencial</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
