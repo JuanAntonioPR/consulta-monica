@@ -1,1 +1,217 @@
 @use "../abstracts/abstracts" as ab;
+
+.site-footer {
+    line-height: 1.4;
+    
+    .container {
+        background-color: ab.$color-primary;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        section {
+            padding: 10px 20px;
+
+            a {
+                color: lightgrey;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                display: inline-block;
+        
+                &:hover {
+                    color: #4FC3F7;
+                    transform: scale(1.05);
+                }
+            }
+
+            div {
+                h2 {
+                    font-size: 1.5rem;
+                    text-align: center;
+                    margin-bottom: 8px;
+                    color: white;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+            
+                    li {
+                        margin: 6.4px 0;
+                        font-size: ab.$font-body-s;
+                    }
+                }
+
+                p {
+                    color: lightgrey;
+                    font-size: ab.$font-body-m;
+
+                    @include ab.breakpoint(mobilexs) {
+                        font-size: ab.$font-body-s;
+                    }
+                }
+            }
+        }
+        
+        .footer-logo {
+            text-align: center;
+    
+            img {
+                margin-top: 20px;
+                max-width: 160px;
+            }
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+    
+            div {
+                padding: 5px;
+    
+                a {
+                    font-size: ab.$font-body-m;
+                }
+            }
+    
+            @include ab.breakpoint(tablet) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @include ab.breakpoint(desktop) {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 0px;
+
+                .footer-contacto {
+                    border-right: 1px solid rgba(255, 255, 255, 0.1);
+                    padding: 5px 25px;
+                }
+
+                .footer-nav {
+                    border-right: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .footer-social {
+                    border-right: 1px solid rgba(255, 255, 255, 0.1);
+                }
+            }
+    
+            .footer-social .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+    
+                a {
+                    display: inline-block;
+                    width: 48px;
+                    height: 48px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    transition: all 0.3s ease;
+                    
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .icon-facebook {
+                    background-image: url("/public/icons/facebook-inverted.svg");
+
+                    &:hover {
+                        background-image: url("/public/icons/facebook-color.svg");
+                    }
+                }
+
+                .icon-instagram {
+                    background-image: url("/public/icons/instagram-inverted.svg");
+
+                    &:hover {
+                        background-image: url("/public/icons/instagram-color.svg");
+                    }
+                }
+
+                .icon-x {
+                    background-image: url("/public/icons/x-inverted.svg");
+
+                    &:hover {
+                        background-image: url("/public/icons/x-color.svg");
+                    }
+                }
+
+                .icon-x2 {
+                    background-image: url("/public/icons/x-inverted2.svg");
+
+                    &:hover {
+                        background-image: url("/public/icons/x-color2.svg");
+                    }
+                }
+
+                .icon-linkedin {
+                    background-image: url("/public/icons/linkedin-inverted.svg");
+
+                    &:hover {
+                        background-image: url("/public/icons/linkedin-color.svg");
+                    }
+                }
+            }
+
+            .footer-whatsapp {
+                img {
+                    width: 52px;
+                    height: 52px;
+                    transition: transform 0.3s ease;
+                    margin: 6.4px 0px;
+    
+                    &:hover {
+                        transform: scale(1.1);
+                    } 
+                }
+            }
+        }
+
+
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 40px;
+    
+            .footer-seo {
+                p {
+                    margin-top: 20px;
+                    color: ab.$color-accent-1;
+                }
+            }
+
+            .footer-copy {
+                p {
+                    color: darkgray;
+                }
+            }
+    
+            .footer-legal {
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+
+                    @include ab.breakpoint(tablet) {
+                        flex-direction: row;
+                        justify-content: center;
+                        gap: 30px;
+                    }
+                }
+
+            }
+        }
+    }
+}
