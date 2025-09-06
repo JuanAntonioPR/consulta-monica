@@ -120,42 +120,34 @@
                 }
 
                 .icon-facebook {
-                    background-image: url("/public/icons/facebook-inverted.svg");
+                    background-image: url("/icons/facebook-inverted.svg");
 
                     &:hover {
-                        background-image: url("/public/icons/facebook-color.svg");
+                        background-image: url("/icons/facebook-color.svg");
                     }
                 }
 
                 .icon-instagram {
-                    background-image: url("/public/icons/instagram-inverted.svg");
+                    background-image: url("/icons/instagram-inverted.svg");
 
                     &:hover {
-                        background-image: url("/public/icons/instagram-color.svg");
+                        background-image: url("/icons/instagram-color.svg");
                     }
                 }
 
                 .icon-x {
-                    background-image: url("/public/icons/x-inverted.svg");
+                    background-image: url("/icons/x-inverted.svg");
 
                     &:hover {
-                        background-image: url("/public/icons/x-color.svg");
-                    }
-                }
-
-                .icon-x2 {
-                    background-image: url("/public/icons/x-inverted2.svg");
-
-                    &:hover {
-                        background-image: url("/public/icons/x-color2.svg");
+                        background-image: url("/icons/x-color.svg");
                     }
                 }
 
                 .icon-linkedin {
-                    background-image: url("/public/icons/linkedin-inverted.svg");
+                    background-image: url("/icons/linkedin-inverted.svg");
 
                     &:hover {
-                        background-image: url("/public/icons/linkedin-color.svg");
+                        background-image: url("/icons/linkedin-color.svg");
                     }
                 }
             }
