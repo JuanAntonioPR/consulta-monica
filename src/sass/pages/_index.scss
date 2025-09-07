@@ -221,11 +221,7 @@
 
             .videoconsulta-picture {
                 width: 100%;
-                height: 100%; /* que ocupe toda la altura del grid cell */
-
-                @include ab.breakpoint(tablet) {
-                    height: 60%;
-                }
+                height: auto;
 
                 @include ab.breakpoint(desktop) {
                     height: 100%;
@@ -234,19 +230,18 @@
                 img {
                     width: 100%;
                     display: block;
-                    height: 100%;
-                    object-fit: contain;
+                    height: auto;
+                    object-fit: cover;
+                    object-position: 80% 50%;
+                    max-height: 400px;
 
                     @include ab.breakpoint(tablet) {
-                        height: auto;
                         max-height: 600px;
-                        object-fit: cover;
                     }
 
                     @include ab.breakpoint(desktop) {
                         height: ab.$altura-total-menos-header;
                         max-height: none;
-                        object-fit: cover;
                     }
                 }
             }
@@ -301,6 +296,8 @@
     .sobre-mi {
         .container {
             width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
 
             @include ab.breakpoint(desktop) {
                 display: grid;
@@ -332,11 +329,7 @@
 
             .sobre-mi-picture {
                 width: 100%;
-                height: 100%; /* que ocupe toda la altura del grid cell */
-
-                @include ab.breakpoint(tablet) {
-                    height: 60%;
-                }
+                height: auto;
 
                 @include ab.breakpoint(desktop) {
                     height: 100%;
@@ -345,19 +338,18 @@
                 img {
                     width: 100%;
                     display: block;
-                    height: 100%;
-                    object-fit: contain;
+                    height: auto;
+                    object-fit: cover;
+                    object-position: 50% 15%;
+                    max-height: 400px;
 
                     @include ab.breakpoint(tablet) {
-                        height: auto;
                         max-height: 600px;
-                        object-fit: cover;
                     }
 
                     @include ab.breakpoint(desktop) {
                         height: ab.$altura-total-menos-header;
                         max-height: none;
-                        object-fit: cover;
                     }
                 }
             }
