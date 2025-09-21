@@ -140,3 +140,12 @@
     }
 
 }
+
+.page-posts section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 300px;
+    gap: 20px;
+}
