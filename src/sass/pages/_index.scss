@@ -49,7 +49,7 @@
         }
 
         .hero-content {
-            max-width: 420px; //
+            // max-width: 420px;
             padding: 1rem;
             border-radius: 12px;
             background-color: rgba(0, 0, 0, 0.25);
@@ -66,6 +66,15 @@
 
             @include ab.breakpoint(tablet) {
                 padding: 1.4rem;
+            }
+
+            @include ab.breakpoint(tablethorizontal) {
+                min-width: 350px;
+                left: 75%;
+            }
+
+            @include ab.breakpoint(desktop) {
+                min-width: 520px;
             }
 
             .doctora {
@@ -232,7 +241,7 @@
                     display: block;
                     height: auto;
                     object-fit: cover;
-                    object-position: 80% 50%;
+                    object-position: 65% 50%;
                     max-height: 400px;
 
                     @include ab.breakpoint(tablet) {
