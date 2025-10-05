@@ -1,0 +1,136 @@
+@use "../abstracts/abstracts" as ab;
+
+.page-sobre-mi {
+    section {
+        position: relative;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre-mi-titulo {
+        h1 {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            
+            color: ab.$color-primary;
+            background: linear-gradient(270deg, ab.$color-primary ,ab.$color-secondary);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            animation: moverDegradado 4s ease infinite;
+    
+            @include ab.breakpoint(mobilexs) { 
+                font-size: 32px; 
+            }
+    
+            @include ab.breakpoint(tablet) {
+                font-size: 44px; 
+            }
+    
+            @include ab.breakpoint(desktop) { 
+                font-size: 58px; 
+            }
+        }
+    }
+    
+    .sobre-mi-intro {
+        background: linear-gradient(180deg, #fff, rgba(ab.$color-primary, 0.5));
+        
+        @include ab.breakpoint(tablethorizontal) {
+            flex-direction: row-reverse; 
+            background: linear-gradient(270deg, #fff, rgba(ab.$color-primary, 0.5));
+            height: ab.$altura-total-menos-header;
+            align-items: stretch;
+        }
+
+        .texto {
+            padding: 25px 40px;
+            width: 100%;
+
+            @include ab.breakpoint(tablethorizontal) {
+                width: 33%;
+                padding: 25px 30px;
+            }
+        }
+
+        .imagen {
+            width: 100%;
+            
+            @include ab.breakpoint(tablethorizontal) {
+                width: 67%;
+                height: 100%;
+                clip-path: polygon(0 0, 100% 0, 87% 100%, 0 100%);
+            }
+            
+            picture img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+
+    .sobre-mi-formacion {
+        background: linear-gradient(180deg, #fff, rgba(ab.$color-primary, 0.5));
+        
+        @include ab.breakpoint(tablethorizontal) {
+            flex-direction: row; 
+            background: linear-gradient(90deg, #fff, rgba(ab.$color-primary, 0.5));
+            height: ab.$altura-total-menos-header;
+            align-items: stretch;
+        }
+
+        .texto {
+            padding: 25px 40px;
+            width: 100%;
+
+            @include ab.breakpoint(tablethorizontal) {
+                width: 50%;
+                padding: 25px 30px;
+                overflow: scroll;      
+
+                p {
+                    font-size: clamp(12px, 1.6vw, 18px);
+                    padding-top: 5px;
+                }
+            }
+
+            @include ab.breakpoint(desktop) {
+                padding: 25px 40px;
+            }
+        }
+
+        .imagen {
+            width: 100%;
+            
+            @include ab.breakpoint(tablethorizontal) {
+                width: 50%;
+                clip-path: polygon(16.7% 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            picture img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+
+    .sobre-mi-experiencia {
+        padding: 25px 40px;
+    }
+
+    .sobre-mi-proyecto {
+        padding: 25px 40px;
+    }
+}
