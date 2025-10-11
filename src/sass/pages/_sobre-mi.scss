@@ -42,7 +42,7 @@
     }
     
     .sobre-mi-intro {
-        background: linear-gradient(180deg, #fff, rgba(ab.$color-primary, 0.5));
+        background: linear-gradient(180deg, #fff, rgba(ab.$color-primary, 0.3));
         
         @include ab.breakpoint(tablethorizontal) {
             flex-direction: row-reverse; 
@@ -80,7 +80,7 @@
     }
 
     .sobre-mi-formacion {
-        background: linear-gradient(180deg, #fff, rgba(ab.$color-primary, 0.5));
+        background: linear-gradient(180deg, #fff, rgba(ab.$color-primary, 0.3));
         
         @include ab.breakpoint(tablethorizontal) {
             flex-direction: row; 
@@ -128,9 +128,181 @@
 
     .sobre-mi-experiencia {
         padding: 25px 40px;
+        background: linear-gradient(180deg, #fff, rgba(ab.$color-primary, 0.3));
+
+        @include ab.breakpoint(tablethorizontal) {
+            background: none;
+        }
     }
 
     .sobre-mi-proyecto {
+        background: linear-gradient(0deg, #fff, rgba(ab.$color-primary, 0.3));
+        padding: 25px 40px;
+
+        @include ab.breakpoint(tablethorizontal) {
+            background: none;
+        }
+    }
+
+    .sobre-mi-areas {
+        padding: 25px 25px;
+
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        .areas-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .area-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+            // Colores por tarjeta
+            &:nth-child(1) { 
+                background: linear-gradient(135deg, #7ec8ca, #95d5b2); // azul verdoso pastel
+            }
+
+            &:nth-child(2) { 
+                background: linear-gradient(135deg, #f2a8a0, #f5b7c9); // rosa pastel suave
+            }
+
+            &:nth-child(3) { 
+                background: linear-gradient(135deg, #ffd57f, #ffe29a); // amarillo pastel
+            }
+
+            &:nth-child(4) { 
+                background: linear-gradient(135deg, #9ee2b2, #a9e0c5); // verde menta pastel
+            }
+
+            &:nth-child(5) { 
+                background: linear-gradient(135deg, #b49ff7, #c6b3ff); // lila pastel
+            }
+
+            &:nth-child(6) { 
+                background: linear-gradient(135deg, #8fd4eb, #9edcf2); // azul celeste pastel
+            }
+
+            &:nth-child(7) { 
+                background: linear-gradient(135deg, #ffb37f, #ffc79a); // melocotón pastel
+            }
+
+            &:nth-child(8) { 
+                background: linear-gradient(135deg, #f4ec7f, #f9f3a1); // amarillo pálido
+            }
+
+
+            .area-header {
+                width: 100%;
+                background: transparent;
+                border: none;
+                color: #656565;
+                text-align: left;
+                padding: 18px 22px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.3s ease;
+
+                .area-icon {
+                    font-size: 1.5rem;
+                    transition: transform 0.3s ease;
+                }
+
+                &[aria-expanded="true"] .area-icon {
+                    transform: rotate(45deg);
+                }
+            }
+
+            .area-content {
+                color: #656565;
+                padding: 18px 22px;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, padding 0.3s ease;
+            }
+        }
+
+        @keyframes moverDegradado {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @include ab.breakpoint(tablet) {
+            .areas-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                align-items: start;
+            }
+
+            .area-card {
+                font-size: 1rem;
+
+                .area-header {
+                    font-size: 1.1rem;
+                }
+
+                .area-content {
+                    font-size: 0.95rem;
+                }
+            }
+        }
+
+        @include ab.breakpoint(tablethorizontal) {
+            .areas-list {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .area-card {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .area-header {
+                min-height: 120px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .sobre-mi-filosofia {
         padding: 25px 40px;
     }
 }

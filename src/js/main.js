@@ -14,6 +14,7 @@ import './preguntas-frecuentes.js';
 import './secondary-page-sections-highlight.js';
 import './modal-cita.js';
 import './index-logo-scroll.js';
+import './sobre-mi-areas.js';
 
 // Importo AOS para animaciones
 import AOS from 'aos';

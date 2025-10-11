@@ -119,19 +119,162 @@
         </section>
 
         <!-- Áreas de interés -->
-        <section class="sobre-mi-areas">
+        <section id="areas" class="sobre-mi-areas">
           <div class="container">
             <h2>Áreas de especial interés</h2>
-            <ul>
-              <li><strong>Reflujo gastroesofágico</strong></li>
-              <li><strong>Dispepsia</strong></li>
-              <li><strong>Hígado graso</strong></li>
-              <li><strong>Intolerancias alimentarias</strong></li>
-              <li><strong>SIBO</strong></li>
-              <li><strong>Esofagitis eosinofílica</strong></li>
-              <li><strong>Enfermedad inflamatoria intestinal</strong></li>
-              <li><strong>Cribado de cáncer colorrectal</strong></li>
-            </ul>
+            <div class="areas-list">
+              <!-- 1 -->
+              <div class="area-card" id="area-1">
+                <button type="button"
+                        class="area-header"
+                        id="area-1-btn"
+                        aria-expanded="false"
+                        aria-controls="area-1-content">
+                  <span class="area-title">Reflujo gastroesofágico</span>
+                  <span class="area-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="area-content" id="area-1-content" role="region" aria-labelledby="area-1-btn" hidden>
+                  <p>
+                    Síntomas como ardor y regurgitación. Enfoque diagnóstico y terapéutico: cambios en la dieta, medidas posturales,
+                    pruebas diagnósticas (pHmetría, endoscopia) y tratamiento farmacológico individualizado.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2 -->
+              <div class="area-card" id="area-2">
+                <button type="button"
+                        class="area-header"
+                        id="area-2-btn"
+                        aria-expanded="false"
+                        aria-controls="area-2-content">
+                  <span class="area-title">Dispepsia</span>
+                  <span class="area-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="area-content" id="area-2-content" role="region" aria-labelledby="area-2-btn" hidden>
+                  <p>
+                    Molestias en la parte alta del abdomen (dolor, plenitud, náuseas). Valoración para descartar causas orgánicas,
+                    manejo de síntomas y estrategias dietéticas y farmacológicas.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 3 -->
+              <div class="area-card" id="area-3">
+                <button type="button"
+                        class="area-header"
+                        id="area-3-btn"
+                        aria-expanded="false"
+                        aria-controls="area-3-content">
+                  <span class="area-title">Hígado graso</span>
+                  <span class="area-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="area-content" id="area-3-content" role="region" aria-labelledby="area-3-btn" hidden>
+                  <p>
+                    Evaluación y seguimiento de la enfermedad hepática por depósito graso (NAFLD). Intervenciones centradas en
+                    cambio de hábitos, control metabólico y pruebas de imagen y laboratorio según necesidad.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 4 -->
+              <div class="area-card" id="area-4">
+                <button type="button"
+                        class="area-header"
+                        id="area-4-btn"
+                        aria-expanded="false"
+                        aria-controls="area-4-content">
+                  <span class="area-title">Intolerancias alimentarias</span>
+                  <span class="area-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="area-content" id="area-4-content" role="region" aria-labelledby="area-4-btn" hidden>
+                  <p>
+                    Valoración de síntomas relacionados con alimentos (lactosa, fructosa, sensibilidad al gluten no celíaca, etc.),
+                    pruebas funcionales y planificación dietética personalizada.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 5 -->
+              <div class="area-card" id="area-5">
+                <button type="button"
+                        class="area-header"
+                        id="area-5-btn"
+                        aria-expanded="false"
+                        aria-controls="area-5-content">
+                  <span class="area-title">SIBO (sobrecrecimiento bacteriano)</span>
+                  <span class="area-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="area-content" id="area-5-content" role="region" aria-labelledby="area-5-btn" hidden>
+                  <p>
+                    Diagnóstico mediante pruebas respiratorias y abordaje con medidas dietéticas y tratamiento antimicrobiano
+                    cuando procede, además de seguimiento de la motilidad intestinal.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 6 -->
+              <div class="area-card" id="area-6">
+                <button type="button"
+                        class="area-header"
+                        id="area-6-btn"
+                        aria-expanded="false"
+                        aria-controls="area-6-content">
+                  <span class="area-title">Esofagitis eosinofílica</span>
+                  <span class="area-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="area-content" id="area-6-content" role="region" aria-labelledby="area-6-btn" hidden>
+                  <p>
+                    Enfermedad inflamatoria del esófago con base alérgica. Diagnóstico endoscópico y manejo combinado (dietético,
+                    farmacológico y seguimiento endoscópico según protocolo).
+                  </p>
+                </div>
+              </div>
+
+              <!-- 7 -->
+              <div class="area-card" id="area-7">
+                <button type="button"
+                        class="area-header"
+                        id="area-7-btn"
+                        aria-expanded="false"
+                        aria-controls="area-7-content">
+                  <span class="area-title">Enfermedad inflamatoria intestinal (EII)</span>
+                  <span class="area-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="area-content" id="area-7-content" role="region" aria-labelledby="area-7-btn" hidden>
+                  <p>
+                    Manejo integral de Crohn y colitis ulcerosa: diagnóstico, tratamiento médico y procedimientos diagnósticos de
+                    seguimiento (incluida ecografía intestinal cuando procede).
+                  </p>
+                </div>
+              </div>
+
+              <!-- 8 -->
+              <div class="area-card" id="area-8">
+                <button type="button"
+                        class="area-header"
+                        id="area-8-btn"
+                        aria-expanded="false"
+                        aria-controls="area-8-content">
+                  <span class="area-title">Cribado de cáncer colorrectal</span>
+                  <span class="area-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="area-content" id="area-8-content" role="region" aria-labelledby="area-8-btn" hidden>
+                  <p>
+                    Información y procesos de cribado: pruebas de sangre oculta en heces, planificación de colonoscopias y
+                    seguimiento de pacientes de riesgo para diagnóstico precoz y prevención.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
