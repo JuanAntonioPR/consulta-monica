@@ -1,0 +1,10 @@
+@use "../abstracts/abstracts" as ab;
+
+a {
+  text-decoration: none;
+  color: ab.$color-primary;
+  
+  &:hover { 
+      color: #4FC3F7; 
+  } 
+}
