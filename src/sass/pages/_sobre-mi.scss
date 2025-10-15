@@ -96,7 +96,12 @@
             @include ab.breakpoint(tablethorizontal) {
                 width: 50%;
                 padding: 25px 30px;
-                overflow: scroll;      
+                overflow: auto;
+                
+                scrollbar-width: none; // Firefox
+                &::-webkit-scrollbar {
+                display: none; // Chrome/Safari
+                }
 
                 p {
                     font-size: clamp(12px, 1.6vw, 18px);
