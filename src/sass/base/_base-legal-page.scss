@@ -37,7 +37,8 @@
             grid-template-columns: auto 1fr;
             column-gap: 10px; // espacio entre término y definición
             row-gap: 6px;     // espacio entre líneas
-            padding: 20px;
+            padding: 40px 20px;
+            align-self: center;
 
             dt {
                 font-weight: 600;
