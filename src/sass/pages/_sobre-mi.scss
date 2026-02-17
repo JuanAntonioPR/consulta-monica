@@ -184,6 +184,10 @@
                 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
             }
 
+            button span {
+                color: rgb(45, 55, 72);
+            }
+
             // Colores por tarjeta
             &:nth-child(1) { 
                 background: linear-gradient(135deg, #7ec8ca, #95d5b2); // azul verdoso pastel
