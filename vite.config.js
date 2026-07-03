@@ -3,6 +3,8 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+  base: "/consulta-monica/",
+
   server: {
     host: true,
     port: 5173,
