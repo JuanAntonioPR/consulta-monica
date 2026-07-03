@@ -1,0 +1,152 @@
+@use "../abstracts/abstracts" as ab;
+
+main.page-404 {
+    height: calc(100vh - #{ab.$altura-header});
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f5f7f9;
+    padding: 0 1rem;
+}
+
+.error-404 {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+/* =========================
+   BACKGROUND 404
+========================= */
+
+.error-background {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(-120px);
+
+    pointer-events: none;
+    user-select: none;
+
+    span {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(10rem, 25vw, 22rem);
+        font-weight: 700;
+        line-height: 1;
+        color: rgba(ab.$color-primary, 0.05);
+        transform: translateY(-50px);
+    }
+
+    @include ab.breakpoint(tablet) {
+        transform: translateY(-80px);
+    }
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.error-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 760px;
+    text-align: center;
+
+    gap: 0.75rem;
+}
+
+/* =========================
+   IMAGEN
+========================= */
+
+.error-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    object-position: top center;
+
+    opacity: 0.9;
+    transform: none;
+    margin-bottom: 0.25rem;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.error-content h1 {
+    margin: 0;
+    color: ab.$color-primary;
+}
+
+.error-content p {
+    margin: 0;
+    line-height: 1.5;
+    color: ab.$color-muted;
+    max-width: 700px;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+
+.error-content .btn-volver {
+    margin-top: 1.5rem;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@include ab.breakpoint(tablet) {
+
+    .error-image {
+        width: 220px;
+    }
+
+    .error-content {
+        gap: 0.5rem;
+        transform: translateY(-20px);
+    }
+
+    .error-content .btn-volver {
+        margin-top: 1rem;
+    }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@include ab.breakpoint(desktop) {
+
+    .error-image {
+        width: 260px;
+    }
+
+    .error-content {
+        max-width: 900px;
+    }
+
+    .error-content .btn-volver {
+        margin-top: 2.5rem;
+    }
+}
