@@ -1,0 +1,59 @@
+# ==================================================
+# GitHub Actions - Despliegue automático a GitHub Pages
+# ==================================================
+
+name: Deploy to GitHub Pages
+
+# ==================================================
+# Ejecutar el workflow en cada push a la rama main
+# ==================================================
+
+on:
+  push:
+    branches:
+      - main
+
+# ==================================================
+# Permisos necesarios para publicar en GitHub Pages
+# ==================================================
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# ==================================================
+# Trabajo de compilación y despliegue
+# ==================================================
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar el proyecto
+        run: npm run build
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir artefacto
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
