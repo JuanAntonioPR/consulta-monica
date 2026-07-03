@@ -12,6 +12,7 @@ export default defineConfig({
       input: {
         // Página principal
         main: resolve(__dirname, 'index.html'),
+        notFound: resolve(__dirname, '404.html'),
 
         // Páginas secundarias (activarlas cuando las tengamos listas)
         avisoLegal: resolve(__dirname, 'html/aviso-legal.html'),
