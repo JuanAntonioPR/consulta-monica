@@ -28,6 +28,11 @@
     padding: 0.6rem 1.1rem;
     font-size: 0.7rem;
 
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
+
     @include ab.breakpoint(tablet) {
         font-size: 0.9rem;
     }
@@ -40,4 +45,14 @@
 // Botón para las tarjetas de servicios
 .btn-servicio {
     @include m.button-service;
+}
+
+// Botón para la página de error
+.btn-volver {
+    @include m.button-cta(ab.$color-primary, #fff);
+
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.6rem;
 }
