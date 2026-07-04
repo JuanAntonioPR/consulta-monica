@@ -33,19 +33,29 @@
         }
 
         dl {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            column-gap: 10px; // espacio entre término y definición
-            row-gap: 6px;     // espacio entre líneas
-            padding: 40px 20px;
-            align-self: center;
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+            margin: 1rem 0 2rem;
 
             dt {
                 font-weight: 600;
+                margin-top: .8rem;
             }
-    
+
             dd {
-                margin: 0; // elimina el margen por defecto
+                margin: 0;
+            }
+
+            @include ab.breakpoint(tablet) {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                column-gap: 1rem;
+                row-gap: .5rem;
+
+                dt, dd {
+                    margin: 0 0 0 2rem;
+                }
             }
         }
 
