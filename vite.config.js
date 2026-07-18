@@ -16,7 +16,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         notFound: resolve(__dirname, '404.html'),
 
-        // Páginas secundarias (activarlas cuando las tengamos listas)
+        // Páginas secundarias
         avisoLegal: resolve(__dirname, 'html/aviso-legal.html'),
         colonoscopia: resolve(__dirname, 'html/colonoscopia.html'),
         consultaPresencial: resolve(__dirname, 'html/consulta-presencial.html'),
@@ -27,6 +27,7 @@ export default defineConfig({
         posts: resolve(__dirname, 'html/posts.html'),
         sobreMi: resolve(__dirname, 'html/sobre-mi.html'),
         videoconsulta: resolve(__dirname, 'html/videoconsulta.html'),
+        aprendeSaludDigestiva: resolve(__dirname, 'html/aprende-salud-digestiva.html'),
       },
     },
   },
