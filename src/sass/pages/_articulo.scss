@@ -1,0 +1,149 @@
+@use "../abstracts/abstracts" as ab;
+
+.article-body {
+    background-color: ab.$color-primary;
+    
+}
+
+
+.page-article {
+    margin-top: 120px;
+    margin-bottom: 40px;
+    padding: 0 1rem;
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+
+        .article-titulo {
+            margin: 3rem 0 1.5rem;
+
+            h1 {
+                font-family: ab.$font-secondary;
+                font-size: 2.8rem;
+                font-style: italic;
+                font-weight: 500;
+                line-height: 1.2;
+                text-align: center;
+                color: ab.$color-primary;
+                text-wrap: balance;
+                text-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+
+                @include ab.breakpoint(tablet) {
+                    font-size: 3.5rem;
+                }
+
+                @include ab.breakpoint(desktop) {
+                    font-size: 4rem;
+                }
+            }
+        }
+
+        .article-back {
+            margin-bottom: 3rem;
+
+            a {
+                color: ab.$color-primary;
+                text-decoration: none;
+                font-weight: 400;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: scale(1.03);
+                }
+
+                &::before {
+                    content: "←";
+                    transition: transform 0.2s ease;
+                }
+
+                &:hover::before {
+                    transform: translateX(-3px);
+                }
+            }
+        }
+
+        .article-intro,
+        .article-section,
+        .article-conclusion {
+            margin-bottom: 3rem;
+
+            h2 {
+                margin-bottom: 1.5rem;
+            }
+
+            h3 {
+                margin: 2rem 0 1.25rem;
+                opacity: 0.9;
+            }
+
+            p {
+                margin-bottom: 1.5rem;
+            }
+
+            ul,
+            ol {
+                margin: 1.5rem 0;
+                padding-left: 1.5rem;
+
+                li {
+                    margin-bottom: 0.75rem;
+                    font-family: ab.$font-secondary;
+                    line-height: 1.4;
+                }
+            }
+        }
+
+        .article-image {
+            margin: 3rem 0;
+            text-align: center;
+
+            img {
+                width: 100%;
+                border-radius: 1rem;
+                display: block;
+            }
+
+            figcaption {
+                margin-top: 1rem;
+                font-size: 0.95rem;
+                color: ab.$color-muted;
+                font-style: italic;
+            }
+        }
+
+        @include ab.breakpoint(tablet) {
+            padding: 2rem;
+        }
+        
+        .article-bibliografia {
+            margin-top: 2rem;
+            padding: 2rem 1rem;
+            background-color: rgba(ab.$color-muted, 0.08);
+            border-radius: 1rem;
+
+            h2 {
+                margin-bottom: 1rem;
+            }
+
+            ul {
+                margin: 0;
+                padding-left: 1.2rem;
+
+                li {
+                    margin-bottom: 1rem;
+                    font-family: ab.$font-secondary;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    color: ab.$color-muted;
+                }
+            }
+        }
+    }
+}

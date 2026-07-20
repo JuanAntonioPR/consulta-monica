@@ -8,6 +8,13 @@
     height: ab.$altura-header;
     z-index: 1100;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+        &--article {
+
+        .main-nav > .btn-cita-header {
+            display: none;
+        }
+    }
 }
 
 .main-nav {
@@ -29,14 +36,6 @@
         @include ab.breakpoint(desktop) {
             width: 180px;
         }
-    }
-
-    .logo.invisible {
-        visibility: hidden;
-    }
-
-    .btn-cita-header.invisible {
-        visibility: hidden;
     }
 
     .ham-menu {
