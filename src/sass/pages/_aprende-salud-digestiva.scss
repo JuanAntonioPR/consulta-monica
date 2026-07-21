@@ -31,6 +31,11 @@
             }
         }
 
+        .aprende-salud-digestiva-intro {
+            margin: 0 auto 4rem;
+            max-width: 900px;
+        }
+
         .aprende-salud-digestiva-articulos {
             margin: 2rem 0 4rem;
             padding: 0 1rem;
@@ -44,17 +49,7 @@
                 display: grid;
                 gap: 2rem;
     
-                @include ab.breakpoint(tablet) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-
-                @include ab.breakpoint(tablethorizontal) {
-                    grid-template-columns: repeat(3, 1fr);
-                }
-    
-                @include ab.breakpoint(desktop) {
-                    grid-template-columns: repeat(4, 1fr);
-                }
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     
                 .articulo-card {
                     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -93,6 +88,39 @@
     
                         .articulo-card-content {
                             padding: 1.5rem;
+
+                            .articulo-card-meta {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                gap: 1rem;
+
+                                margin-bottom: 0.75rem;
+
+                                .categoria {
+                                    display: inline-flex;
+                                    align-items: center;
+
+                                    padding: 0.25rem 0.7rem;
+
+                                    border-radius: 999px;
+
+                                    background: rgba(ab.$color-primary, 0.08);
+                                    color: ab.$color-primary;
+
+                                    font-size: 0.6rem;
+                                    font-weight: 500;
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.04em;
+                                    white-space: nowrap;
+                                }
+
+                                time {
+                                    font-size: 0.8rem;
+                                    color: ab.$color-muted;
+                                    white-space: nowrap;
+                                }
+                            }
             
                             h3 {
                                 font-family: ab.$font-primary;
