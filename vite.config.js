@@ -28,6 +28,8 @@ export default defineConfig({
         sobreMi: resolve(__dirname, 'html/sobre-mi.html'),
         videoconsulta: resolve(__dirname, 'html/videoconsulta.html'),
         aprendeSaludDigestiva: resolve(__dirname, 'html/aprende-salud-digestiva.html'),
+
+        // Artículos de "Aprende con la Doctora Moreno"
       },
     },
   },
